@@ -37,7 +37,7 @@ jobs:
           chmod 600 mykey.pem
           cat mykey.pem
 
-          ssh -o StrictHostKeyChecking=no -i mykey.pem ubuntu@334.229.82.235 "docker pull 681414095026.dkr.ecr.us-east-1.amazonaws.com/mediplus:4"
+          ssh -o StrictHostKeyChecking=no -i mykey.pem ubuntu@34.229.82.235 "docker pull 681414095026.dkr.ecr.us-east-1.amazonaws.com/mediplus:4"
 
                     # ssh -o StrictHostKeyChecking=no -i mykey.pem ubuntu@34.229.82.235 "docker rm -f mediplus"
 
