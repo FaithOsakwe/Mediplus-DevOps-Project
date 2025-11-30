@@ -27,15 +27,15 @@ jobs:
             docker push 681414095026.dkr.ecr.us-east-1.amazonaws.com/mediplus:V${{ github.run_number }}
         
 
-  # deploy:
-  #   runs-on: ubuntu-latest
-  #   needs: build-push
-  #   steps: 
-  #     - name: check my ssh key
-  #       run: |
-  #         echo "${{ secrets.SSH_KEY }}" > mykey.pem
-  #         chmod 600 mykey.pem
-  #         cat mykey.pem
+  deploy:
+    runs-on: ubuntu-latest
+    needs: build-push
+    steps: 
+      - name: check my ssh key
+        run: |
+          echo "${{ secrets.SSH_KEY }}" > mykey.pem
+          chmod 600 mykey.pem
+          
 
   #         ssh -o StrictHostKeyChecking=no -i mykey.pem ubuntu@100.30.99.90 "docker pull 681414095026.dkr.ecr.us-east-1.amazonaws.com/mediplus:V${{ github.run_number }}"
 
